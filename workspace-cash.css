@@ -1,0 +1,192 @@
+/* Caja: jerarquía compacta, importes claros y controles cómodos en la gama Libra. */
+#view-cash { max-width: 1480px; margin: 0 auto; }
+.cash-header-actions { gap: 8px; }
+.cash-header-actions select { min-height: 44px; font-size: 13px; }
+.cash-header-actions .primary { white-space: nowrap; }
+.cash-open-label { display: flex; align-items: center; gap: 7px; margin: 0 0 15px; font-size: 12px; }
+.cash-open-label::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.closure-banner { margin-top: 0; padding: 14px 16px; line-height: 1.6; }
+.cash-quick-actions { display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; gap: 8px; margin: 15px 0; }
+.cash-quick-actions button { min-height: 44px; font-size: 12px; }
+.cash-quick-actions > p { margin-right: auto; font-size: 12px; color: var(--muted); }
+.cash-quick-actions svg { width: 16px; height: 16px; }
+.cash-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 18px 0 12px; }
+.cash-metric { min-width: 0; padding: 21px 23px; }
+.cash-metric > span { display: block; font-size: 12px; }
+.cash-metric strong { margin: 8px 0; font-size: 33px; line-height: 1.25; font-weight: 550; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.cash-metric small { font-size: 12px; }
+.cash-method-strip { display: flex; flex-wrap: wrap; gap: 12px 24px; padding: 15px 20px; margin-bottom: 23px; border: 1px solid var(--line); border-radius: 13px; background: var(--glass); }
+.cash-method-strip > :is(div, span) { min-width: 115px; flex: 1; }
+.cash-method-strip span { color: var(--muted); font-size: 11px; }
+.cash-method-strip strong { display: block; margin-top: 3px; color: var(--ink); font-size: 14px; font-weight: 550; font-variant-numeric: tabular-nums; }
+.cash-method-strip small { display: block; font-size: 11px; color: var(--muted); margin-top: 3px; }
+.cash-method-strip > p { font-size: 12px; color: var(--muted); }
+.cash-breakdown { margin: 0 0 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.cash-breakdown > summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px; min-height: 44px; padding: 11px 16px; color: var(--accent); font-size: 12px; cursor: pointer; list-style: none; }
+.cash-breakdown > summary::-webkit-details-marker { display: none; }
+.cash-breakdown > summary::after { content: ""; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); margin: -4px 2px 0 0; }
+.cash-breakdown[open] > summary::after { transform: rotate(225deg); margin-top: 4px; }
+.cash-breakdown > summary:hover { background: var(--soft); border-radius: 11px; }
+.cash-breakdown > summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 11px; }
+.cash-breakdown .cash-method-strip { margin: 0; border-width: 1px 0 0; border-radius: 0 0 11px 11px; background: var(--surface); }
+.cash-work-tabs { display: none; padding: 4px; gap: 6px; border: 1px solid var(--line); border-radius: 12px; background: var(--soft); margin-bottom: 16px; }
+.cash-work-tabs button { flex: 1; min-height: 44px; padding: 10px 12px; font-size: 13px; color: var(--muted); border-radius: 8px; }
+.cash-work-tabs button[aria-pressed="true"] { background: var(--surface); color: var(--ink); font-weight: 600; box-shadow: var(--shadow); }
+.cash-work-tabs button span { display: inline-grid; place-items: center; min-width: 19px; min-height: 19px; margin-left: 6px; border-radius: 6px; background: var(--paper); font-size: 10px; }
+.cash-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 20px; }
+.cash-panel { min-width: 0; padding: 23px; }
+.cash-panel .panel-heading { align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+.cash-panel .panel-heading h2 { font-size: 21px; font-weight: 550; }
+.cash-panel .panel-heading p { font-size: 12px; line-height: 1.6; max-width: 37em; }
+.cash-panel .panel-heading .mini-badge { flex-shrink: 0; font-size: 10px; margin-top: 3px; }
+.cash-filters { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) minmax(0, 1fr); gap: 8px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.cash-filters label { min-width: 0; margin: 0; font-size: 11px; }
+.cash-filters input, .cash-filters select { width: 100%; min-width: 0; min-height: 44px; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); font-size: 12px; }
+.cash-search { display: flex; align-items: center; gap: 8px; min-width: 0; min-height: 44px; padding: 0 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.cash-search svg { width: 16px; height: 16px; color: var(--muted); }
+.cash-search input { border: 0; padding: 10px 0; background: none; }
+.cash-panel .movement-row { display: grid; grid-template-columns: 35px minmax(0, 1fr) auto auto; align-items: center; gap: 12px; padding: 15px 0; }
+.cash-panel .movement-icon { width: 35px; height: 35px; border-radius: 10px; }
+.cash-panel .movement-row > div { min-width: 0; }
+.cash-panel .movement-row strong { font-size: 13px; font-weight: 550; }
+.cash-panel .movement-row > strong { white-space: nowrap; text-align: right; font-variant-numeric: tabular-nums; }
+.cash-panel .movement-row p { font-size: 12px; line-height: 1.5; margin-top: 4px; }
+.cash-panel .movement-row small { display: block; font-size: 11px; color: var(--muted); margin-top: 4px; }
+.cash-panel .movement-row .secondary { min-width: 44px; min-height: 44px; padding: 9px 10px; font-size: 11px; }
+.cash-panel .movement-row:last-child { border-bottom: 0; }
+.cash-panel .pending-visit { min-height: 76px; padding: 14px 7px; gap: 10px; }
+.cash-panel .pending-visit > span { min-width: 0; }
+.cash-panel .pending-visit > strong { flex-shrink: 0; font-size: 15px; font-weight: 550; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cash-panel .pending-visit strong { font-size: 13px; font-weight: 550; }
+.cash-panel .pending-visit small { font-size: 12px; line-height: 1.5; }
+.cash-panel .pending-visit .cash-pending-badge { display: inline-flex; flex: none; width: auto; padding: 3px 7px; margin-top: 5px; border-radius: 6px; color: var(--accent); background: var(--card-blue); font-size: 10px; }
+.cash-panel .empty-state { padding: 30px 10px; font-size: 13px; }
+.cash-panel .empty-state p { font-size: 12px; margin-top: 7px; line-height: 1.6; }
+#payment-dialog { width: min(520px, calc(100% - 30px)); max-width: 520px; max-height: calc(100dvh - 30px); overflow-y: auto; padding: 26px; }
+:is(#payment-dialog, #cash-entry-dialog, #cash-refund-dialog) form { max-height: none; overflow: visible; }
+:is(#payment-dialog, #cash-entry-dialog, #cash-refund-dialog) [hidden] { display: none !important; }
+#payment-summary { padding: 17px 0 0; }
+#payment-summary > strong { font-size: 25px; font-weight: 550; margin: 0; }
+#payment-summary > p { font-size: 12px; line-height: 1.6; margin-top: 5px; }
+.cash-balance-line { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 16px; margin: 15px 0 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.cash-balance-line > :is(div, span) { min-width: 0; }
+.cash-balance-line span { display: block; color: var(--muted); font-size: 11px; }
+#payment-summary .cash-balance-line strong { display: block; font-size: 18px; margin: 5px 0 0; line-height: 1.3; font-weight: 550; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.payment-shortcuts { display: flex; gap: 8px; margin: 14px 0; }
+.payment-shortcuts button { min-height: 44px; flex: 1; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--paper); color: var(--accent); font-size: 12px; }
+.payment-shortcuts button:hover { border-color: var(--outline); background: var(--soft); }
+.payment-split-toggle { display: flex; align-items: center; min-height: 44px; gap: 10px; margin: 16px 0 10px; padding: 8px 0; font-size: 13px; cursor: pointer; }
+.payment-split-toggle input { width: 18px; height: 18px; margin: 0; accent-color: #75645c; }
+.cash-payment-part { padding: 15px; margin: 12px 0; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.cash-payment-part > p, .cash-payment-part > h3 { font-size: 12px; color: var(--muted); font-weight: 550; margin-bottom: 9px; }
+.cash-payment-part .field { margin-top: 0; min-width: 0; }
+.cash-payment-part .form-row { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 12px; }
+.cash-payment-part.form-row { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 12px; }
+.cash-payment-part .field input, .cash-payment-part .field select { min-height: 44px; }
+#payment-cash-fields { padding: 2px 0 5px; }
+#payment-cash-fields .form-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: end; }
+#payment-cash-fields.form-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: end; }
+.cash-change-result { display: flex; flex-direction: column; justify-content: center; min-height: 44px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--card-blue); font-size: 12px; color: var(--muted); }
+.cash-change-result strong, .cash-change-result output { display: block; font-size: 20px; color: var(--ink); font-weight: 550; font-variant-numeric: tabular-nums; }
+output.cash-change-result { color: var(--ink); font-size: 20px; font-weight: 550; font-variant-numeric: tabular-nums; }
+#payment-preview { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; border: 1px solid var(--line); background: var(--paper); padding: 15px; margin-top: 18px; border-radius: 12px; font-size: 12px; }
+#payment-preview span { color: var(--muted); }
+#payment-preview > span:only-child { grid-column: 1 / -1; }
+#payment-preview strong { display: block; font-size: 21px; font-weight: 550; font-variant-numeric: tabular-nums; margin-top: 4px; }
+#payment-dialog .form-error { margin-top: 12px; font-size: 12px; line-height: 1.6; }
+#payment-dialog .dialog-actions { margin-top: 19px; }
+#payment-dialog .dialog-actions .primary { flex: 1; }
+:is(#cash-entry-dialog, #cash-refund-dialog) { max-width: 500px; max-height: calc(100dvh - 30px); overflow-y: auto; }
+:is(#cash-entry-dialog, #cash-refund-dialog) .field { min-width: 0; }
+:is(#cash-entry-dialog, #cash-refund-dialog) .dialog-description { font-size: 13px; line-height: 1.6; }
+:is(#cash-entry-dialog, #cash-refund-dialog) .form-error { font-size: 12px; line-height: 1.6; }
+#cash-entry-dialog .cash-entry-types { display: flex; gap: 8px; margin: 16px 0; }
+#cash-entry-dialog .cash-entry-types label { display: flex; align-items: center; flex: 1; min-height: 44px; gap: 8px; padding: 11px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); font-size: 13px; }
+#cash-entry-dialog .cash-entry-types label:has(input:checked) { border-color: var(--outline); background: var(--card-blue); }
+#cash-entry-dialog .cash-entry-types input { accent-color: #75645c; }
+.cash-refund-summary, #cash-refund-summary { border: 1px solid var(--line); background: var(--paper); padding: 15px; margin: 18px 0; border-radius: 12px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.cash-refund-summary strong, #cash-refund-summary > strong { display: block; margin: 0; color: var(--ink); font-size: 20px; font-weight: 550; font-variant-numeric: tabular-nums; }
+#cash-refund-summary > p { margin-top: 5px; font-size: 12px; }
+#cash-refund-summary > span { display: block; margin-top: 6px; font-size: 12px; }
+.dark #view-cash select, .dark #view-cash input,
+.dark :is(#payment-dialog, #cash-entry-dialog, #cash-refund-dialog) input { color-scheme: dark; }
+
+@media (max-width: 1100px) {
+  .cash-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 16px; }
+  .cash-metric { padding: 19px; }
+  .cash-metric strong { font-size: 30px; }
+  .cash-panel { padding: 20px; }
+  .cash-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cash-filters > :first-child { grid-column: 1 / -1; }
+  .cash-panel .movement-row { grid-template-columns: 32px minmax(0, 1fr) auto; gap: 10px; }
+  .cash-panel .movement-row > button { grid-column: 2 / -1; justify-self: end; }
+}
+@media (max-width: 760px) {
+  .cash-layout { grid-template-columns: minmax(0, 1fr); }
+  .cash-work-tabs { display: flex; }
+  #view-cash[data-cash-tab="pending"] .cash-movements-panel,
+  #view-cash[data-cash-tab="movements"] .cash-pending-panel { display: none; }
+  .cash-panel .movement-row { grid-template-columns: 35px minmax(0, 1fr) auto auto; }
+  .cash-panel .movement-row > button { grid-column: auto; }
+}
+@media (max-width: 560px) {
+  .rail nav [data-view="overview"], .rail nav [data-view="booking"], .rail nav [data-view="concept"] { display: none; }
+  .rail nav .rail-btn { width: 25%; flex: 1; min-width: 0; }
+  .cash-header-actions { justify-content: flex-start; }
+  #view-cash > .heading-row { margin-bottom: 12px; }
+  #view-cash > .heading-row .eyebrow { margin-bottom: 4px; }
+  #view-cash > .heading-row .subtitle { display: none; }
+  #view-cash .cash-open-label { font-size: 11px; margin-bottom: 8px; }
+  .cash-header-actions .primary { font-size: 12px; padding: 10px 12px; }
+  .cash-header-actions select { font-size: 14px; }
+  .cash-quick-actions { margin: 8px 0; }
+  .cash-quick-actions button { flex: 1; padding: 10px; }
+  .cash-quick-actions > p { flex-basis: 100%; }
+  .cash-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 14px 0 12px; }
+  .cash-metric { padding: 13px 10px; border-radius: 13px; }
+  .cash-metric:first-child { grid-column: auto; }
+  .cash-metric strong, .cash-metric:first-child strong { font-size: 23px; margin: 6px 0 0; }
+  .cash-metric > span { min-height: 32px; font-size: 11px; line-height: 1.45; }
+  .cash-metric small { display: none; }
+  .cash-method-strip { padding: 14px 16px; gap: 12px; margin-bottom: 18px; }
+  .cash-method-strip > :is(div, span) { min-width: 115px; flex-basis: calc(50% - 12px); }
+  .cash-method-strip strong { font-size: 14px; }
+  .cash-breakdown { margin-bottom: 12px; }
+  .cash-breakdown > summary { padding: 11px 14px; }
+  .cash-work-tabs { padding: 3px; margin-bottom: 12px; }
+  .cash-panel { padding: 16px; }
+  .cash-panel .panel-heading { margin-bottom: 12px; }
+  .cash-pending-panel .panel-heading p { display: none; }
+  .cash-panel .panel-heading h2 { font-size: 20px; }
+  .cash-panel .panel-heading p { font-size: 12px; }
+  .cash-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cash-filters > :first-child { grid-column: 1 / -1; }
+  .cash-filters input { font-size: 16px; }
+  .cash-filters select { font-size: 13px; }
+  .cash-panel .movement-row { grid-template-columns: 30px minmax(0, 1fr) auto; gap: 9px; }
+  .cash-panel .movement-icon { width: 30px; height: 30px; border-radius: 9px; }
+  .cash-panel .movement-row > div { flex-basis: auto; }
+  .cash-panel .movement-row > strong { font-size: 13px; }
+  .cash-panel .movement-row > button { grid-column: 2 / -1; justify-self: end; margin: 0; }
+  .cash-panel .pending-visit { min-height: 77px; gap: 9px; padding: 14px 2px; }
+  .cash-panel .pending-visit > strong { font-size: 14px; }
+  #payment-dialog { padding: 22px 19px; }
+  #payment-dialog .dialog-head h2 { font-size: 25px; }
+  .cash-balance-line { padding: 13px 10px; gap: 8px; }
+  #payment-summary .cash-balance-line strong { font-size: 16px; }
+  .cash-balance-line span { font-size: 11px; }
+  .cash-payment-part { padding: 13px; }
+  .cash-payment-part .form-row { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .cash-payment-part.form-row { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .cash-payment-part .field input, .cash-payment-part .field select { font-size: 16px; }
+  #payment-cash-fields .form-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #payment-cash-fields.form-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #payment-cash-fields .field { min-width: 0; }
+  .cash-change-result { padding: 9px 10px; }
+  #payment-preview { padding: 13px; }
+  #payment-preview strong { font-size: 19px; }
+  :is(#cash-entry-dialog, #cash-refund-dialog) { padding: 22px 19px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #view-cash *, #payment-dialog *, #cash-entry-dialog *, #cash-refund-dialog * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
